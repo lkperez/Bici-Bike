@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_06_222005) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_06_224447) do
   create_table "bikes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "identifier"
     t.integer "current_station_id"
@@ -22,6 +22,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_06_222005) do
     t.string "username"
     t.string "password"
     t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "starRating"
+    t.text "textReview"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
