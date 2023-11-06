@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_06_225037) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_06_225615) do
   create_table "bikes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "identifier"
     t.integer "current_station_id"
@@ -26,9 +26,27 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_06_225037) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "reports", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.datetime "date"
+    t.boolean "isResolved"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "reviews", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "starRating"
     t.text "textReview"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rides", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "length"
+    t.datetime "timeStart"
+    t.string "timeEnd"
+    t.string "datetime"
+    t.integer "rideCost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
