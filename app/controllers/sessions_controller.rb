@@ -3,8 +3,9 @@ class SessionController < ApplicationController
     end
 
     def create
+      logger.info("***")
         user = User.find_by(username: params[:sessions][:username])
-        if user && user.password == params[:session][:password]
+        if user && user.password == params[:sessions][:password]
           log_in user
           redirect_to root_path
         else 

@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  #before_action :require login
   protect_from_forgery with: :exception
 
   def log_in(user)
