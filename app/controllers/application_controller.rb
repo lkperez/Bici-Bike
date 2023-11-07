@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+include ActionController::helper_method
   protect_from_forgery with :exception
 
   def log_in(user)
