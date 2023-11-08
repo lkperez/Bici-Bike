@@ -4,18 +4,18 @@ class SessionController < ApplicationController
 
     def create
       logger.info("***")
-        user = User.find_by(username: params[:sessions][:username])
-        if user && user.password == params[:sessions][:password]
-          log_in user
-          redirect_to root_path
+        user = User.find_by(username: params[:session][:username])
+        if user && user.authenticate == params[:session][:password]
+          session[:user_id] = user.id
+          redirect_to root_path, notice: "Login was successful!"
         else 
-           flash.now[:danger] = 'Invalid username/password'
-           render 'new'
+           flash.now[:error] = 'Invalid username/password'
+           render :new
         end
     end
 
     def destroy
-      log_out
-      redirect_to root_path
+      session[:user_id] = nil
+      redirect_to root_path, notice: 'Logged out'
     end
 end
