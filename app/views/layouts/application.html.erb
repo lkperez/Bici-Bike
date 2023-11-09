@@ -27,11 +27,13 @@
         <%= link_to 'Login', login_path %>
       <% end %>
     </header>
+  </body>
 
     <main>
       <%= yield %>
     </main>
 
+    <body>
     <% if flash[:notice] %>
       <p><%= flash[:notice] %></p>
     <% end %>
@@ -39,4 +41,5 @@
     <% if flash[:alert] %>
       <p><%= flash[:alert] %></p>
     <% end %>
+    </body>
 </html>
