@@ -1,30 +1,12 @@
 Rails.application.routes.draw do
-  get 'routes/index'
-  get 'routes/show'
-  get 'routes/new'
-  get 'routes/edit'
-  get 'rides/index'
-  get 'rides/show'
-  get 'rides/new'
-  get 'rides/edit'
-  get 'reviews/index'
-  get 'reviews/show'
-  get 'reviews/new'
-  get 'reviews/edit'
-  get 'reports/index'
-  get 'reports/show'
-  get 'reports/new'
-  get 'reports/edit'
-  get 'members/index'
-  get 'members/show'
-  get 'members/new'
-  get 'members/edit'
-  get 'bikes/index'
-  get 'bikes/show'
-  get 'bikes/new'
-  get 'bikes/edit'
-  root to: "stations#index"
 
+  resources :routes, except: [:create, :update, :delete, :destroy]
+  resources :rides, except: [:create, :update, :delete, :destroy]
+  resources :reviews, except: [:create, :update, :delete, :destroy]
+  resources :reports, except: [:create, :update, :delete, :destroy]
+  resources :members, except: [:create, :update, :delete, :destroy]
+  resources :bikes, except: [:create, :update, :delete, :destroy]
+  root to: "stations#index"
   resources :stations
 
 end
