@@ -13,22 +13,11 @@
     <title>Bici-Bike</title>
   </head>
   <body>
+  <%= render 'layouts/messages' %>
     <div id="site-container" class="flexbox vertical stretch flex-1">
       <div class="flexbox vertical center">
         <%= yield %>
       </div>
     </div>
-    <div id="flash-messages">
-      <%= render 'layouts/messages' %>
-    </div>
-  </body>
-  <body>
-    <header>
-      <% if current_user %>
-        <%= link_to 'Logout', logout_path, method: :delete %>
-      <% else %>
-        <%= link_to 'Login', login_path %>
-      <% end %>
-    </header>
   </body>
 </html>
