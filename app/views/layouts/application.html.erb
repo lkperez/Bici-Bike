@@ -18,9 +18,11 @@
         <%= yield %>
       </div>
     </div>
+    <div id="flash-messages">
+      <%= render 'layouts/messages' %>
+    </div>
   </body>
   <body>
-    <%= render 'layouts/messages' %>
     <header>
       <% if current_user %>
         <%= link_to 'Logout', logout_path, method: :delete %>
