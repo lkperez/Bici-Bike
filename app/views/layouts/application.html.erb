@@ -28,17 +28,7 @@
       <% end %>
     </header>
   </body>
-
-  # <body>
-  #   <% if flash[:notice] %>
-  #     <p><%= flash[:notice] %></p>
-  #   <% end %>
-  # </body>
-
-  # <body>
-  #   <% if flash[:alert] %>
-  #     <p><%= flash[:alert] %></p>
-  #   <% end %>
-  # </body>
-
+  <body>
+    <%= render 'layouts/messages' %>
+  </body>
 </html>
