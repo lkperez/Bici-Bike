@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
           redirect_to root_path, notice: "Login was successful!"
         else 
            flash.now[:alert] = 'Invalid username/password'
-           render :new
+           render 'new'
         end
     end
 
