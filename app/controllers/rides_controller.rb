@@ -8,11 +8,16 @@ class RidesController < ApplicationController
   end
 
   def new
-    @ride = Ride.new(params[:ride])
+    @count = Ride.count
+    @ride = Ride.new(id: @count + 1)
+  end
+
+  def create
+    @ride = Ride.new(params[:rides])
     if @ride.save
-      puts "no error"
+      redirect_to rides_path
     else
-      puts "error"
+      redirect_to new_ride_path
     end
   end
 
