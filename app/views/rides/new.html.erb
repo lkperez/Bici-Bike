@@ -4,16 +4,11 @@
       Rent a Bike
     </div>
     <div class="rides new">
-      <%= form_for(@ride) do |f| %>
-      <table summary ="Ride form fields">
-        <tr>
-            <th>Length of Ride (minutes)</th>
-            <td><%= f.text_field(:length) %></td>
-        </tr>
-      </table>
-      <div class = "form-button">
-        <%= f.submit("Rent bike") %>
-      </div>
+      <%= form_for @ride do |f| %>
+        <%= f.label :length %>:
+        <%= f.number_field :length %><br/>
+
+        <%= f.submit %>
       <% end %>
     </div>
 	</div>
