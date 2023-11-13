@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
         user = User.find_by(username: params[:username])
         if user && user.authenticate(params[:password])
           log_in user
-          redirect_to root_path, notice: "Login was successful!"
+          redirect_to stations_path, notice: "Login was successful!"
         else 
            flash.now[:alert] = 'Invalid username/password'
            render :new
