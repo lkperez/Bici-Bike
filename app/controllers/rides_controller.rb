@@ -6,6 +6,8 @@ class RidesController < ApplicationController
   end
 
   def new
+    @count = Ride.count
+    @ride = Ride.new(id: @count + 1)
   end
 
   def edit

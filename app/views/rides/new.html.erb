@@ -1,4 +1,20 @@
-<div>
-  <h1 class="font-bold text-4xl">Rides#new</h1>
-  <p>Find me in app/views/rides/new.html.erb</p>
+<div class="page-section flexbox vertical stretch">
+  <div class="section-inner flexbox vertical stretch">
+    <div class="section-title">
+      Rent a Bike
+    </div>
+    <div class="rides new">
+      <%= form_for(@ride) do |f| %>
+      <table summary ="Ride form fields">
+        <tr>
+            <th>Length of Ride (minutes)</th>
+            <td><%= f.text_field(:length) %></td>
+        </tr>
+      </table>
+      <div class = "form-button">
+        <%= f.submit("Rent bike") %>
+      </div>
+      <% end %>
+    </div>
+	</div>
 </div>
