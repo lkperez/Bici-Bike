@@ -13,9 +13,7 @@
     <title>Bici-Bike</title>
   </head>
   <body>
-    <turbo-stream action="replace" target="flash">
-      <%= render 'layouts/messages', flash: flash %>
-    </turbo-stream>
+  <%= render 'layouts/messages' %>
     <div id="site-container" class="flexbox vertical stretch flex-1">
       <div class="flexbox vertical center">
         <%= yield %>
