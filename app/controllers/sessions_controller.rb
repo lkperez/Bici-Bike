@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
           render turbo_stream: turbo_stream.visit(root_path)
         else 
            flash.now[:alert] = 'Invalid username/password'
-           render :new
+           render 'new'
         end
     end
 
