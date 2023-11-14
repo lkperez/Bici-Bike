@@ -8,12 +8,12 @@ class RidesController < ApplicationController
   end
 
   def new
-    @count = Ride.count
-    @ride = Ride.new(id: @count + 1)
+    @count = Ride.count + 1
+    @ride = Ride.new(id:@count)
   end
 
   def create
-    @ride = Ride.new(params[:rides])
+    @ride = Ride.new(params.require(:ride).permit(:member_id, :bike_id, :length, :id))
     if @ride.save
       redirect_to rides_path
     else
