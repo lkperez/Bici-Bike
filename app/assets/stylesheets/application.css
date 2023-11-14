@@ -15,7 +15,16 @@
  */
   
   /* Style the links inside the navigation bar */
-  .topnav a {
+  nav { 
+    margin: 0; padding: 0;
+  }
+
+  ul.topnav li{
+    background-color: grey;
+    overflow: hidden;
+  }
+
+  .topnav li a {
     color: black;
     text-align: center;
     padding: 14px 16px;
@@ -44,5 +53,23 @@
   }
 
   li {
-    display: inline;
+    display:inline-block;
   }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav {
+    background-color: grey;
+    position: fixed;
+    color:white;
+    display: block;
+    overflow: hidden;
+    width: 100%; 
+    padding: 10px;
+}
