@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :bikes, except: [:create, :update, :delete, :destroy]
   root to: "stations#index"
   resources :stations
+  get "/pages/:page" => "pages#show"
 
 end
