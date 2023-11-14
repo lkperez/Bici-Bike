@@ -1,3 +1,5 @@
 <div class="record-row <%= cycle "odd", "even", name: "row-cycler" %> flexbox vertical stretch">
-  <p> Bike <%= bike.identifier %> </p>
+  <p> Bike <%= bike.identifier %> -
+    <%= link_to("Rent this bike", new_ride_path({bike_id: bike.identifier})) %> 
+  </p>
 </div>

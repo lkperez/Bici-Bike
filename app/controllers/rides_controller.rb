@@ -8,12 +8,11 @@ class RidesController < ApplicationController
   end
 
   def new
-    @count = Ride.count + 1
-    @ride = Ride.new(id:@count)
+    @ride = Ride.new(bike_id: params[:bike_id])
   end
 
   def create
-    @ride = Ride.new(params.require(:ride).permit(:member_id, :bike_id, :length, :id))
+    @ride = Ride.new(params.require(:ride).permit(:member_id, :bike_id, :length))
     if @ride.save
       @ride.bike.current_station_id = nil
       @ride.bike.save
