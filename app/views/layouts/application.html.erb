@@ -20,12 +20,6 @@
       </div>
     </div>
   </body>
-<body>
-<%= yield %>
-<% if logged_in? %>
-  <%= link_to 'Logout', logout_path, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% else %>
-  <%= link_to 'Login', login_path %>
-<% end %>
-</body>
+  <%= javascript_include_tag 'rails-ujs', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'turbolinks', 'data-turbolinks-track': 'reload' %>
 </html>
