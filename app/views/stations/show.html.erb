@@ -1,0 +1,16 @@
+<div class="page-section flexbox vertical stretch">
+  <div class="section-inner flexbox vertical stretch">
+    <div class="section-title">
+      <%= @station.name %> Station
+    </div>
+    <div class="flexbox vertical stretch">
+      <% if @station.docked_bikes.length != 0 %>
+        <%= render(partial: "bikes/row", collection: @station.docked_bikes, as: :bike) %>
+      <% else %>
+      <div class="empty">
+        No bikes here.
+      </div>
+      <% end %>
+    </div>
+	</div>
+</div>

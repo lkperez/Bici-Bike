@@ -1,13 +1,27 @@
+
+  <nav class = "topnav">
+    <ul>
+      <li><a href="pages/about.html">About</a></li>
+      <li><a href="pages/pricing.html">Pricing</a></li>
+      <li><a href="adventures">Adventures</a></li>
+      <li><a href="#map">Map</a></li>
+      <li><a href="#help">Help</a></li>
+      <li style ="float:right"><a href = "#account">My Account</li>
+    </ul>
+  </nav>
+
 <div class="page-section flexbox vertical stretch">
   <div class="section-inner flexbox vertical stretch">
     <div class="section-title">
       Welcome to BiciBike!
     </div>
+
     <link rel="stylesheet" href="bikemap.css">
     <div class="google-map">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47193.7043966162!2d-72.66339995!3d42.329590499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e6d73e7c8e2a05%3A0xc316750b13d8db0b!2sNorthampton%2C%20MA!5e0!3m2!1sen!2sus!4v1699940041010!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <div class="flexbox vertical stretch">
+
       <% if @stations.present? %>
         <%= render(partial: "stations/row", collection: @stations, as: :station) %>
       <% else %>
@@ -16,5 +30,9 @@
       </div>
       <% end %>
     </div>
-	</div>
+	</div> 
 </div>
+
+<div class="footer">
+  <p>Made by Jillian, Laisha, Kika, and Rachel for CSC 223 Fall 2023.</p>
+</div> 

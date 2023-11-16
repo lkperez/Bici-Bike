@@ -13,3 +13,63 @@
  *= require_tree .
  *= require_self
  */
+  
+  /* Style the links inside the navigation bar */
+  nav { 
+    margin: 0; padding: 0;
+  }
+
+  ul.topnav li{
+    background-color: grey;
+    overflow: hidden;
+  }
+
+  .topnav li a {
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    width: 20%;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: gray;
+    color: white;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  ul {
+    position: -webkit-sticky;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display:inline-block;
+  }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav {
+    background-color: grey;
+    position: fixed;
+    color:white;
+    display: block;
+    overflow: hidden;
+    width: 100%; 
+    padding: 10px;
+}
