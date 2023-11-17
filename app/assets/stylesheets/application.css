@@ -27,3 +27,21 @@
     color: red;
   }
 
+  .center-form {
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .login-button {
+    background-color: #444547;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
