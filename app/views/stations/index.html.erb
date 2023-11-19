@@ -15,8 +15,14 @@
     <div class="section-title">
       Welcome to BiciBike!
     </div>
+
+    
+    
+    
+    
     <div class="flexbox vertical stretch">
-      <% if @stations.present? %>
+      
+    <% if @stations.present? %>
         <%= render(partial: "stations/row", collection: @stations, as: :station) %>
       <% else %>
       <div class="empty">
@@ -26,11 +32,6 @@
     </div>
 	</div>
 </div>
-
-
-
-
-
 
 
 
