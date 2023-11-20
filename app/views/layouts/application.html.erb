@@ -13,10 +13,13 @@
     <title>ValetBike</title>
   </head>
   <body>
+  <%= render 'layouts/messages' %>
     <div id="site-container" class="flexbox vertical stretch flex-1">
       <div class="flexbox vertical center">
         <%= yield %>
       </div>
     </div>
   </body>
+  <%= javascript_include_tag 'rails-ujs', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'turbolinks', 'data-turbolinks-track': 'reload' %>
 </html>
