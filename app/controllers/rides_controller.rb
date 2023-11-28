@@ -8,7 +8,7 @@ class RidesController < ApplicationController
   end
 
   def new
-    @ride = Ride.new(bike_id: params[:bike_id])
+    @ride = Ride.new(bike_id: params[:bike_id], member_id: current_member.id)
   end
 
   def create

@@ -1,13 +1,13 @@
 class MembersController < ApplicationController
   def new
-    @user = User.new
+    @member = Member.new
   end
 
   def create
-    @user = User.new(user_params)
+    @member = Member.new(member_params)
 
-    if @user.save
-      session[:user_id] = @user.id
+    if @member.save
+      session[:member_id] = @member.id
       redirect_to root_path, notice: 'Account created successfully!'
     else
       render :new
@@ -16,7 +16,7 @@ class MembersController < ApplicationController
 
   private
 
-  def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation)
+  def member_params
+    params.require(:member).permit(:username, :email, :password, :password_confirmation)
   end
 end

@@ -2,7 +2,7 @@
   <p>Create an account to use Bici-Bike. Enter an username and password should be at least six characters!</p>
 </div>
 
-<%= form_with(model: @user, url: signup_path, local: true) do |f| %>
+<%= form_with(model: @member, url: signup_path, local: true) do |f| %>
   <div class="form-group">
     <%= f.label :username %>
     <%= f.text_field :username %>
