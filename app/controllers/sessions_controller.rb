@@ -1,19 +1,19 @@
 class SessionsController < ApplicationController
     def new
-      @user = User.new 
+      @member = Member.new
     end
-  
+
     def create
-      @user = User.find_by(username: params[:username])
-        if @user && @user.authenticate(params[:password])
-          log_in(@user) 
+      @member = Member.find_by(username: params[:username])
+        if @member && @member.authenticate(params[:password])
+          log_in(@member)
           redirect_to root_path, notice: 'Login was successful!'
-        else 
-           flash.now[:alert] = 'Invalid username/password'
+        else
+           flash.now[:alert] = 'Invalid membername/password'
            render 'new'
         end
     end
-  
+
     def destroy
       log_out()
       redirect_to root_path, notice: 'Logged out'

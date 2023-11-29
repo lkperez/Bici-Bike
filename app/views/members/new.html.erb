@@ -1,4 +1,24 @@
 <div>
-  <h1 class="font-bold text-4xl">Members#new</h1>
-  <p>Find me in app/views/members/new.html.erb</p>
+  <p>Create an account to use Bici-Bike. Enter an username and password should be at least six characters!</p>
 </div>
+
+<%= form_with(model: @member, url: signup_path, local: true) do |f| %>
+  <div class="form-group">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit 'Sign up', class: 'signup-button' %>
+  </div>
+<% end %>
