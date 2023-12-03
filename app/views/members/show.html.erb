@@ -28,7 +28,7 @@
         <tr>
           <td> <%=r.timeStart%> </td>
           <td> <%=r.timeEnd%> </td>
-          <td> Return </td>
+          <td> <%=link_to "Return", edit_ride_path(r.id)%> </td>
         </tr>
         <% end %>
       <% end %>
