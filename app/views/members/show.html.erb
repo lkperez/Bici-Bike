@@ -24,11 +24,11 @@
         <th> Actions </th>
       </tr>
       <% current_member.rides.each do |r| %>
-        <% if r.timeEnd > DateTime.now %>
+        <% if !r.returned %>
         <tr>
           <td> <%=r.timeStart%> </td>
           <td> <%=r.timeEnd%> </td>
-          <td> <%=link_to "Return", edit_ride_path(r.id)%> </td>
+          <td> <%=link_to "Return", edit_bike_path(r.bike_id, {ride_id: r.id})%> </td>
         </tr>
         <% end %>
       <% end %>
@@ -40,7 +40,7 @@
         <th> End Time </th>
       </tr>
       <% current_member.rides.each do |r| %>
-        <% if r.timeEnd < DateTime.now %>
+        <% if r.returned %>
         <tr>
           <td> <%=r.timeStart%> </td>
           <td> <%=r.timeEnd%> </td>

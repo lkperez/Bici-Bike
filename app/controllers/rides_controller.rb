@@ -19,9 +19,9 @@ class RidesController < ApplicationController
     if @ride.save
       @ride.bike.current_station_id = nil
       @ride.bike.save
-      redirect_to rides_path
+      redirect_to member_path(current_member.id)
     else
-      redirect_to new_ride_path
+      render('new')
     end
   end
 
