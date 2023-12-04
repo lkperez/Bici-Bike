@@ -26,8 +26,8 @@
       <% current_member.rides.each do |r| %>
         <% if !r.returned %>
         <tr>
-          <td> <%=r.timeStart%> </td>
-          <td> <%=r.timeEnd%> </td>
+          <td> <%=r.timeStart.strftime('%m/%d/%Y %I:%M %p')%> </td>
+          <td> <%=r.timeEnd.strftime('%m/%d/%y %I:%M %p')%> </td>
           <td> <%=link_to "Return", edit_bike_path(r.bike_id, {ride_id: r.id})%> </td>
         </tr>
         <% end %>
@@ -42,8 +42,8 @@
       <% current_member.rides.each do |r| %>
         <% if r.returned %>
         <tr>
-          <td> <%=r.timeStart%> </td>
-          <td> <%=r.timeEnd%> </td>
+          <td> <%=r.timeStart.strftime('%m/%d/%y %I:%M %p')%> </td>
+          <td> <%=r.timeEnd.strftime('%m/%d/%y %I:%M %p')%> </td>
         </tr>
         <% end %>
       <% end %>
