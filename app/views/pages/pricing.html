@@ -8,3 +8,153 @@
     </nav>
 </header>
 <p>We haven't really decided on pricing yet lmao. </p>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>
+    var stripe = Stripe(pk_test_51OHeAKJg0jV0uG9HFob6ddEw6UmDY1dEM80lWeO93jIx5GKD5XnKFWPQlVkCp3Xno7nq8FFSAq0ftN7p8x3fLBc100gLoVMuXR);
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Pricing</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .pricing-container {
+      display: flex;
+      justify-content: space-around;
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .pricing-card {
+      width: 100%;
+      max-width: 600px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      margin: 20px;
+    }
+
+    .pricing-card:hover {
+      transform: scale(1.05);
+    }
+
+    .pricing-card-content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .pricing-card h2 {
+      color: #333;
+    }
+
+    .pricing-card p {
+      color: #777;
+    }
+
+    .pricing-details {
+      display: none;
+      padding: 20px;
+      border-top: 1px solid #ddd;
+      text-align: center;
+    }
+
+    .pricing-card.expanded {
+      transform: scale(1.05);
+    }
+
+    .pricing-card.expanded .pricing-details {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="pricing-container">
+    <div class="pricing-card" onclick="toggleDetails(this)">
+      <div class="pricing-card-content">
+        <h2>Student/Senior Plan</h2>
+        <p>$10/month</p>
+        <button onclick="redirectToCheckout('Student/Senior Plan')">Join</button>
+      </div>
+      <div class="pricing-details">
+        <p>Features of the Student and Senior Plan:</p>
+        <ul>
+          <li>For seniors 50 and up</li>
+          <li>For students pariticipating the eligible colleges:
+            Smith, 
+            UMASS,
+            Hampshire College, 
+            Amherst,
+            Mount Holyoke
+          </li>
+          <li>Unlimited hour rides</li>
+          <li>Every hour more is $3 more</li>
+          <li>Perfect for a quick trip</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pricing-card" onclick="toggleDetails(this)">
+      <div class="pricing-card-content">
+        <h2>Busy-Persons Plan</h2>
+        <p>$30/month</p>
+        <button onclick="redirectToCheckout('Busy-Persons Plan')">Join</button>
+      </div>
+      <div class="pricing-details">
+        <p>Features of the Busy-Persons Plan:</p>
+        <ul>
+          <li>Unlimited 24 hour rides</li>
+          <li>for every half and hour more its $10</li>
+          <li>Access to all adventures</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleDetails(card) {
+      card.classList.toggle('expanded');
+    }
+    function redirectToCheckout(planId) {
+    fetch('/create-checkout-session', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        planId: planId,
+      }),
+    })
+    .then(response => response.json())
+    .then(session => {
+      return stripe.redirectToCheckout({ sessionId: session.id });
+    })
+    .then(result => {
+      if (result.error) {
+        alert(result.error.message);
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+  }
+  </script>
+
+</body>
+</html>
