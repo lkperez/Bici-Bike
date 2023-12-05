@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Map Project</title>
+    # <meta charset="UTF-8">
+    # <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    # <title>Northampton,MA</title>
 
     <!-- Include Mapbox GL JS library -->
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
+    
+    <script src='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css' rel='stylesheet' />
+
     # <!-- Include Leaflet library -->
     # <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     # <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
@@ -16,13 +18,13 @@
     <!-- Your HTML content goes here -->
 
     <!-- Your Mapbox map container -->
-    <div id='map' style='width: 100%; height: 400px;'></div>
+    <div id='map' style='width: 400px; height: 300px;'></div>
 
     <!-- Your custom scripts or additional dependencies -->
     <script>
         // Initialize Mapbox map
         mapboxgl.accessToken = 'sk.eyJ1IjoiYmljaWJpa2UiLCJhIjoiY2xwcnhncXpnMGNmeTJpbzJlaGFlMXFyOSJ9.Wh6qU65NRsbm-3jIF1aqSA'; // Replace with your Mapbox access token
-        var map = new mapboxgl.Map({
+        const map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/satellite-streets-v11',
             center: [42.3251, 72.6412], # Northampton coordinates
