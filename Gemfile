@@ -78,6 +78,8 @@ end
 # Developer Added Gems
 gem 'dotenv-rails'
 
+gem 'leaflet-rails'
+
 # Suggested Potentially Useful Gems
 # gem 'devise'
 # gem 'httparty'
