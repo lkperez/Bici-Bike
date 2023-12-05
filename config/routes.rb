@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :bikes, except: [:create, :update, :delete, :destroy]
   root to: "stations#index"
   resources :stations
+  get '/index.html', to: 'stations#index'
   get "/pages/:page" => "pages#show"
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
