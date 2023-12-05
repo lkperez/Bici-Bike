@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :routes, except: [:create, :update, :delete, :destroy]
-  resources :rides, except: [:update, :delete, :destroy]
-  resources :reviews, except: [:create, :update, :delete, :destroy]
-  resources :reports, except: [:create, :update, :delete, :destroy]
-  resources :members, except: [:create, :update, :delete, :destroy]
-  resources :bikes, except: [:create, :update, :delete, :destroy]
+  resources :routes
+  resources :rides
+  resources :reviews
+  resources :reports
+  resources :members
+  resources :bikes
   root to: "stations#index"
   resources :stations
   get '/index.html', to: 'stations#index'
