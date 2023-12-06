@@ -17,8 +17,8 @@
         }
         #map {
             width: 100vw; /* Adjust to your preferred width */
-            height: 100vh; /* Adjust to your preferred height */
-            margin: auto; /* Center the map horizontally */
+            height: calc(100vh - 40px); /* Adjust to your preferred height */
+            margin: 40px; /* Center the map horizontally */
         }
         .topnav {
             overflow: hidden;
@@ -26,6 +26,7 @@
             position: fixed; /* Set the navbar to fixed position */
             top: 0; /* Position the navbar at the top of the page */
             width: 100%; /* Full width */
+            z-index: 1000;
         }
 
     /* Links inside the navbar */
@@ -64,7 +65,7 @@
             container: 'map',
             style: 'mapbox://styles/mapbox/satellite-streets-v11',
             center: [-72.664658, 42.328674], // Northampton coordinates
-            zoom: 30
+            zoom: 15
         });
     </script>
 </body>
