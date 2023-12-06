@@ -5,7 +5,18 @@
     
     <script src='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css' rel='stylesheet' />
-
+    <!-- Your custom scripts or additional dependencies -->
+    <script>
+        // Initialize Mapbox map
+        mapboxgl.accessToken = 'pk.eyJ1IjoiYmljaWJpa2UiLCJhIjoiY2xwcm5vd3Q3MDFvbTJrbXpucWlqNGlsMCJ9.aaw1PJPd897Xnz2bX-Yltw'; // Replace with your Mapbox access token
+        
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/satellite-streets-v11',
+            center: [-72.6403, 42.3163], // Northampton coordinates
+            zoom: 15
+        });
+    </script>
     <!-- # Include Leaflet library
     # <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     # <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script> -->
@@ -56,18 +67,7 @@
    
     
 
-    <!-- Your custom scripts or additional dependencies -->
-    <script>
-        // Initialize Mapbox map
-        mapboxgl.accessToken = 'pk.eyJ1IjoiYmljaWJpa2UiLCJhIjoiY2xwcm5vd3Q3MDFvbTJrbXpucWlqNGlsMCJ9.aaw1PJPd897Xnz2bX-Yltw'; // Replace with your Mapbox access token
-        
-        const map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/satellite-streets-v11',
-            center: [-72.6403, 42.3163], // Northampton coordinates
-            zoom: 15
-        });
-    </script>
+   
 </body>
 </html>
 <!-- sk.eyJ1IjoiYmljaWJpa2UiLCJhIjoiY2xwcnhncXpnMGNmeTJpbzJlaGFlMXFyOSJ9.Wh6qU65NRsbm-3jIF1aqSA -->
