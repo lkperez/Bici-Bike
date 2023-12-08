@@ -28,7 +28,7 @@
     font-size: 17px;
     width: 20%;
   }
-  
+
   /* Change the color of links on hover */
   .topnav a:hover {
     background-color: gray;
@@ -103,4 +103,18 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+td {
+  text-align: center;
+  border: 1px solid lightgrey;
+  padding: 5px;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+button {
+  background-color: darkblue;
 }
