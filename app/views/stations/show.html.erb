@@ -3,6 +3,8 @@
     <div class="section-title">
       <%= @station.name %> Station
     </div>
+    <p><b>Address:</b> <%= @station.address %></p> <br>
+    <h1>Available Bikes</h1>
     <div class="flexbox vertical stretch">
       <% if @station.docked_bikes.length != 0 %>
         <%= render(partial: "bikes/row", collection: @station.docked_bikes, as: :bike) %>

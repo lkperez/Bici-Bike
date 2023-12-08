@@ -21,6 +21,7 @@ class RidesController < ApplicationController
       @ride.bike.save
       redirect_to member_path(current_member.id)
     else
+      flash.now[:alert] = 'Length required'
       render('new')
     end
   end

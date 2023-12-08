@@ -32,17 +32,20 @@
   </div>
 </nav>
 
-<div class="page-section flexbox vertical stretch">
+<div class="page-section flexbox vertical stretch" style="z-index: 0;">
   <div class="section-inner flexbox vertical stretch">
+    <br /> <br />
     <div class="section-title">
       Your Account
     </div>
     <p> <b>Username:</b> <%=current_member.username%> </p>
     <p> <b>Email:</b> <%=current_member.email%> </p>
-    <%=link_to("Edit", edit_member_path(current_member.id)) %>
+    <div class="button-style">
+      <%=link_to("Edit", edit_member_path(current_member.id)) %>
+    </div>
     <br>
     <h1> Current Rides </h1>
-    <table>
+    <table class="ride-table">
       <tr>
         <th> Start Time </th>
         <th> End Time </th>
@@ -53,14 +56,16 @@
         <tr>
           <td> <%=r.timeStart.strftime('%m/%d/%Y %I:%M %p')%> </td>
           <td> <%=r.timeEnd.strftime('%m/%d/%y %I:%M %p')%> </td>
-          <td> <%=link_to "Return", edit_bike_path(r.bike_id, {ride_id: r.id})%> </td>
+          <td><div class="button-style">
+            <%=link_to "Return", edit_bike_path(r.bike_id, {ride_id: r.id})%>
+          </div> </td>
         </tr>
         <% end %>
       <% end %>
     </table>
     <br />
     <h1> Ride History </h1>
-    <table>
+    <table class="ride-table">
       <tr>
         <th> Start Time </th>
         <th> End Time </th>
@@ -75,6 +80,8 @@
       <% end %>
     </table>
     <br />
-    <%= link_to 'Log out', logout_path, method: :delete %>
+    <div class="button-style">
+      <%= link_to 'Log out', logout_path, method: :delete %>
+    </div>
   </div>
 </div>

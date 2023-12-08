@@ -105,16 +105,29 @@
   cursor: pointer;
 }
 
-td {
+table.ride-table td {
   text-align: center;
-  border: 1px solid lightgrey;
+  border: 1px solid #F1F2F3;
   padding: 5px;
+}
+
+th {
+  background-color: #F1F2F3;
 }
 
 h1 {
   font-size: 20px;
 }
 
-button {
-  background-color: darkblue;
+.button-style {
+  background-color: #05014a;
+  color: white;
+  padding: 8px 15px 8px 15px;
+  margin-top: 5px;
+  width: fit-content;
+  border-radius: 3px;
+}
+
+.button-style:hover {
+  background-color: #141859;
 }

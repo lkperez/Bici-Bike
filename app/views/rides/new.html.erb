@@ -5,11 +5,11 @@
     </div>
     <div class="rides new">
       <%= form_with model: @ride do |f| %>
-        <%= f.label :bike_id %>:
-        <%= f.number_field :bike_id, :readonly => true %><br/>
-        <%= f.label :length %>:
-        <%= f.number_field :length %><br/>
-        <%= f.submit %>
+        <%= f.label :bike_id %>: <br>
+        <%= f.number_field :bike_id, :readonly => true %> <br><br>
+        <%= f.label "Length (in minutes)"%>: <br>
+        <%= f.number_field :length %> <br><br>
+        <div class="button-style"><%= f.submit "Start Rental" %></div>
       <% end %>
     </div>
 	</div>
