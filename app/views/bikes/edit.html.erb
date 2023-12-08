@@ -5,9 +5,9 @@
     </div>
     <div class="bikes edit">
       <%= form_with model: @bike do |f| %>
-        <%= f.label "Station" %>:
+        <%= f.label "Station" %>: <br>
         <%= f.select :current_station_id, Station.order(:id).map { |station| [station.name, station.id] } %><br/>
-        <%= f.submit("Return Bike") %>
+        <div class="button-style" style="margin-top:20px;"><%= f.submit("Return Bike") %> </div>
       <% end %>
     </div>
 	</div>

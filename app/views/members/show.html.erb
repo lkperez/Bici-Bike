@@ -49,16 +49,24 @@
       <tr>
         <th> Start Time </th>
         <th> End Time </th>
+        <th> Time Remaining </th>
         <th></th>
       </tr>
       <% current_member.rides.each do |r| %>
         <% if !r.returned %>
         <tr>
-          <td> <%=r.timeStart.strftime('%m/%d/%Y %I:%M %p')%> </td>
-          <td> <%=r.timeEnd.strftime('%m/%d/%y %I:%M %p')%> </td>
-          <td><div class="button-style">
+          <td> <%=r.timeStart.localtime.strftime('%m/%d/%Y %I:%M %p')%> </td>
+          <td> <%=r.timeEnd.localtime.strftime('%m/%d/%y %I:%M %p')%> </td>
+          <td style="border-right: 0px;">
+            <% if ((r.timeEnd - Time.now)/60).round > 0 %>
+              <%=((r.timeEnd - Time.now)/60).round%> minutes
+            <%else%>
+              Overdue
+            <% end %>
+          </td>
+          <td style="border-left: 0px;"><div class="button-style" style="margin:auto;">
             <%=link_to "Return", edit_bike_path(r.bike_id, {ride_id: r.id})%>
-          </div> </td>
+          </div></td>
         </tr>
         <% end %>
       <% end %>
