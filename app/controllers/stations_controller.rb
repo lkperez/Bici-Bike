@@ -13,4 +13,22 @@ class StationsController < ApplicationController
     @station = Station.find(params[:id])
   end
 
+  def new
+  end
+
+  def create
+  end
+
+  def edit
+    @station = Station.find(params[:id])
+  end
+
+  def update
+    @station = Station.find(params[:id])
+    if @station.update(params.require(:station).permit(:total_docks, :address, :name))
+      redirect_to station_path(@station.id)
+    end
+  end
+
+
 end
