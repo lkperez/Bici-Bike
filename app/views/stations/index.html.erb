@@ -44,7 +44,6 @@
     <div class="flexbox vertical stretch">
       <br>
       <h1> Stations </h1>
-      <br>
       <% if @stations.present? %>
         <%= render(partial: "stations/row", collection: @stations, as: :station) %>
       <% else %>
