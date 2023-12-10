@@ -1,4 +1,52 @@
-<div>
-  <h1 class="font-bold text-4xl">Members#show</h1>
-  <p>Find me in app/views/members/show.html.erb</p>
+<nav class = "topnav">
+  <ul>
+    <li><a href="pages/about.html">About</a></li>
+    <li><a href="pages/pricing.html">Pricing</a></li>
+    <li><a href="adventures">Adventures</a></li>
+    <li><a href="#map">Map</a></li>
+    <li><a href="#help">Help</a></li>
+    <li style ="float:right"><a href=members/<%=current_member.id%>>My Account</a></li>
+  </ul>
+</nav>
+
+<div class="page-section flexbox vertical stretch">
+  <div class="section-inner flexbox vertical stretch">
+    <div class="section-title">
+      Your Account
+    </div>
+    <p> Username: <%=current_member.username%> </p>
+    <p> Email: <%=current_member.email%> </p>
+    <h1> Current Rides </h1>
+    <table>
+      <tr>
+        <th> Start Time </th>
+        <th> End Time </th>
+        <th> Actions </th>
+      </tr>
+      <% current_member.rides.each do |r| %>
+        <% if !r.returned %>
+        <tr>
+          <td> <%=r.timeStart.strftime('%m/%d/%Y %I:%M %p')%> </td>
+          <td> <%=r.timeEnd.strftime('%m/%d/%y %I:%M %p')%> </td>
+          <td> <%=link_to "Return", edit_bike_path(r.bike_id, {ride_id: r.id})%> </td>
+        </tr>
+        <% end %>
+      <% end %>
+    </table>
+    <h1> Ride History </h1>
+    <table>
+      <tr>
+        <th> Start Time </th>
+        <th> End Time </th>
+      </tr>
+      <% current_member.rides.each do |r| %>
+        <% if r.returned %>
+        <tr>
+          <td> <%=r.timeStart.strftime('%m/%d/%y %I:%M %p')%> </td>
+          <td> <%=r.timeEnd.strftime('%m/%d/%y %I:%M %p')%> </td>
+        </tr>
+        <% end %>
+      <% end %>
+    </table>
+  </div>
 </div>

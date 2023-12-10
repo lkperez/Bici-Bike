@@ -6,9 +6,7 @@
     <div class="rides new">
       <%= form_with model: @ride do |f| %>
         <%= f.label :bike_id %>:
-        <%= f.number_field :bike_id %><br/>
-        <%= f.label :member_id %>:
-        <%= f.number_field :member_id %><br/>
+        <%= f.number_field :bike_id, :readonly => true %><br/>
         <%= f.label :length %>:
         <%= f.number_field :length %><br/>
         <%= f.submit %>

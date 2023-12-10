@@ -13,12 +13,8 @@
  *= require_tree .
  *= require_self
  */
-  
-  /* Style the links inside the navigation bar */
-  nav { 
-    margin: 0; padding: 0;
-  }
 
+  /* Style the links inside the navigation bar */
   ul.topnav li{
     background-color: grey;
     overflow: hidden;
