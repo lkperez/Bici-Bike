@@ -3,5 +3,9 @@ class PagesController < ApplicationController
         render template: "pages/#{params[:page]}"
     end
 
+    def map
+        # Your 'map' action code goes here
+    end
+
     
   end 
