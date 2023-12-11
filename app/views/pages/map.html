@@ -17,8 +17,30 @@
                 center: [-72.6403, 42.3163], // Northampton coordinates
                 zoom: 15
             });
+
+
+
+// Array of marker information (coordinates and popup content)
+    const markers = [
+        { coordinates: [-72.6326929,  42.3172997], content: '<h3>Pulaski Park Station </h3><p>Some information for Marker 1.</p>' },
+        { coordinates: [-72.6378679,  42.319534], content: '<h3>JMG Station</h3><p>Some information for Marker 2.</p>' },
+        { coordinates: [-72.635669,  42.3167667], content: '<h3>Forbes Station</h3><p>Some information for Marker 2.</p>' },
+        // Add more markers as needed
+    ];
+
+    // Loop through the markers array and add each marker to the map
+        markers.forEach(markerInfo => {
+            const popup = new mapboxgl.Popup({ offset: 35 }).setHTML(markerInfo.content);
+
+            new mapboxgl.Marker()
+                .setLngLat(markerInfo.coordinates)
+                .setPopup(popup)
+                .addTo(map);
+        
+            });   
+        }); 
             
-        });
+       
     </script>
     <!-- # Include Leaflet library
     # <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
@@ -41,7 +63,7 @@
             z-index: 1; 
         }
 
-        
+      
         .topnav {
             overflow: hidden;
             background-color: #333;
