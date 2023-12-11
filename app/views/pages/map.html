@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    
+    <script src='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Your custom scripts or additional dependencies -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Map initialization code here
+            mapboxgl.accessToken = 'pk.eyJ1IjoiYmljaWJpa2UiLCJhIjoiY2xwcm5vd3Q3MDFvbTJrbXpucWlqNGlsMCJ9.aaw1PJPd897Xnz2bX-Yltw'; // Replace with your Mapbox access token
+            
+            const map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/satellite-streets-v11',
+                center: [-72.6403, 42.3163], // Northampton coordinates
+                zoom: 15
+            });
+            
+        });
+    </script>
+    <!-- # Include Leaflet library
+    # <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    # <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script> -->
+    
+    <style>
+       
+       body {
+            height: 125vh;
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            /* box-sizing: border-box; */
+        }
+        #map {
+            width: 100%; /* Adjust to your preferred width */
+            height: calc(100vh - 40px); /* Adjust to your preferred height */
+            margin-top: 70px ; /* Center the map horizontally */
+            position: relative;
+            z-index: 1; 
+        }
+
+        
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+            position: fixed; /* Set the navbar to fixed position */
+            top: 0; /* Position the navbar at the top of the page */
+            left: 0;
+            width: 100%; /* Full width */
+            z-index: 2;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
+
+    /* Links inside the navbar */
+        .topnav a {
+            /* display: flex; */
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <!-- Your HTML content goes here -->
+    <header>
+        <nav class = "topnav">
+          <a href="about.html">About</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="#adventures">Adventures</a>
+          <a href="map.html">Map</a>
+          <a href="#help">Help</a>
+        </nav>
+    </header>
+   
+    <!-- Your Mapbox map container -->
+     <div id='map'></div>
+   
+    
+
+   
+</body>
+
+</html>
+<!-- sk.eyJ1IjoiYmljaWJpa2UiLCJhIjoiY2xwcnhncXpnMGNmeTJpbzJlaGFlMXFyOSJ9.Wh6qU65NRsbm-3jIF1aqSA -->

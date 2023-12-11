@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :reports
   resources :members
   resources :bikes
+  resources :categories
   root to: "stations#index"
   resources :stations
   get '/index.html', to: 'stations#index'
@@ -16,5 +17,6 @@ Rails.application.routes.draw do
   get '/signup', to: 'members#new', as: 'signup'
   post '/signup', to: 'members#create'
   resources :users, only: [:new, :create]
+  get 'pages/map', to: 'pages#map'
 
 end
