@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_04_013949) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_11_032937) do
   create_table "bikes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "identifier"
     t.integer "current_station_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "image_link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -93,6 +101,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_04_013949) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "map_id"
+    t.integer "category_id"
   end
 
   create_table "stations", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -102,6 +111,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_04_013949) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "map_id"
+    t.integer "total_docks"
   end
 
 end
