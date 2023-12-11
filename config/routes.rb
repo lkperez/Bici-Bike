@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   get '/signup', to: 'members#new', as: 'signup'
   post '/signup', to: 'members#create'
   resources :users, only: [:new, :create]
+  get 'pages/map', to: 'pages#map'
 
 end
