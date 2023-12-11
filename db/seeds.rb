@@ -8,4 +8,6 @@ Bike.destroy_all
 Bike.create!([{identifier: 01, current_station_id: 1},{identifier: 02, current_station_id: 1},{identifier: 03, current_station_id: 1},{identifier: 04, current_station_id: 1},{identifier: 05, current_station_id: 3},{identifier: 06, current_station_id: 2},{identifier: 07, current_station_id: 3}])
 
 p "Created #{Bike.count} bikes"
-
+Station.find { | station | station.identifier == 1}.docked_bikes << Bike.select {| bike | bike.current_station_id == 1}
+Station.find { | station | station.identifier == 2}.docked_bikes << Bike.select {| bike | bike.current_station_id == 2}
+Station.find { | station | station.identifier == 3}.docked_bikes << Bike.select {| bike | bike.current_station_id == 3}
