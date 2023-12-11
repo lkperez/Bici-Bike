@@ -41,6 +41,6 @@
         <p><b>Start Location: </b><%=@route.startLocation%></p>
         <p><b>End Location: </b><%=@route.endLocation%></p> <br>
         <p><b>Instructions: </b><%=@route.instructions%></p> <br>
-        <a class="button-style" href="<%=new_review_path%>">Write a review</a>
+        <a class="button-style" href="<%=new_review_path({route_id:@route.id})%>">Write a review</a>
     	</div>
 </div>
