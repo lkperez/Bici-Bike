@@ -29,22 +29,6 @@
         </div>
       </div>
 </nav>
-<div style="margin-top: 120px; z-index:0;">
-  <%= form_with(url: login_path, local: true) do |f| %>
-      <div class="form-group">
-        <%= f.label :username %>
-        <%= f.text_field :username %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :password %>
-        <%= f.password_field :password %>
-      </div>
-
-      <div class="form-group">
-        <%= f.submit 'Log in', class: 'button-style' %>
-      </div>
-  <% end %>
-
-  <%= link_to 'Sign up', signup_path %>
+<div class="footer">
+  <p>Made by Jillian, Laisha, Kika, and Rachel for CSC 223 Fall 2023.</p>
 </div>
