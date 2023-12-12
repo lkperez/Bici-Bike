@@ -43,6 +43,7 @@
         <%= f.number_field :bike_id, :readonly => true %> <br><br>
         <%= f.label "Length (in minutes)"%>: <br>
         <%= f.number_field :length %> <br><br>
+        <%= f.hidden_field :member_id, value: current_member.id %>
         <div class="button-style"><%= f.submit "Start Rental" %></div>
       <% end %>
     </div>

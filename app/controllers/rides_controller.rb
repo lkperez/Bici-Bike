@@ -17,7 +17,6 @@ class RidesController < ApplicationController
 
   def create
     @ride = Ride.new(params.require(:ride).permit(:member_id, :bike_id, :length, :timeStart))
-    @ride.update(member_id: current_member.id)
     if @ride.save
       @ride.update(timeStart: DateTime.now)
       @ride.update(timeEnd: @ride.timeStart + @ride.length.minutes)

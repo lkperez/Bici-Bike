@@ -9,7 +9,7 @@ Station.create!([{identifier: 1, name: "Smith College", address: "1 Chapin Way",
 p "Created #{Station.count} stations"
 
 Bike.destroy_all
-Bike.create!([{identifier: 01, current_station_id: 1},{identifier: 02, current_station_id: 1},{identifier: 03, current_station_id: 1},{identifier: 04, current_station_id: 1},{identifier: 05, current_station_id: 3},{identifier: 06, current_station_id: 2},{identifier: 07, current_station_id: 3}])
+Bike.create!([{id: 1, identifier: 01, current_station_id: 1},{id: 2, identifier: 02, current_station_id: 1},{id: 3, identifier: 03, current_station_id: 1},{id: 4, identifier: 04, current_station_id: 1},{id: 5, identifier: 05, current_station_id: 3},{id: 6, identifier: 06, current_station_id: 2},{id: 7, identifier: 07, current_station_id: 3}])
 
 p "Created #{Bike.count} bikes"
 Station.find { | station | station.identifier == 1}.docked_bikes << Bike.select {| bike | bike.current_station_id == 1}
