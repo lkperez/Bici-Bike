@@ -78,6 +78,9 @@ end
 # Developer Added Gems
 gem 'dotenv-rails'
 
+
+
+
 #stripe Gem
 gem 'stripe'
 
