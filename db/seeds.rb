@@ -11,3 +11,4 @@ p "Created #{Bike.count} bikes"
 Station.find { | station | station.identifier == 1}.docked_bikes << Bike.select {| bike | bike.current_station_id == 1}
 Station.find { | station | station.identifier == 2}.docked_bikes << Bike.select {| bike | bike.current_station_id == 2}
 Station.find { | station | station.identifier == 3}.docked_bikes << Bike.select {| bike | bike.current_station_id == 3}
+
