@@ -8,7 +8,11 @@ class RidesController < ApplicationController
   end
 
   def new
-    @ride = Ride.new(bike_id: params[:bike_id])
+    if logged_in?
+      @ride = Ride.new(bike_id: params[:bike_id])
+    else
+      redirect_to login_path, alert: "Please log in!"
+    end
   end
 
   def create
