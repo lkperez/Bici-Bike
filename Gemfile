@@ -78,6 +78,8 @@ end
 # Developer Added Gems
 gem 'dotenv-rails'
 
+#stripe Gem
+gem 'stripe'
 gem 'leaflet-rails'
 
 gem 'mapbox-sdk'

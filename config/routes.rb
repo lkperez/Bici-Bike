@@ -1,3 +1,4 @@
+
 Rails.application.routes.draw do
 
   resources :routes
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
   resources :stations
   get '/index.html', to: 'stations#index'
   get "/pages/:page" => "pages#show"
+  post '/create-checkout-session', to: 'pages#create_checkout_session'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy', as: 'logout'
