@@ -20,25 +20,20 @@
 
 
 
-// Array of marker information (coordinates and popup content)
-    const markers = [
-        { coordinates: [-72.6326929,  42.3172997], content: '<h3>Pulaski Park Station </h3>><p>Some information for Marker 1.</p>' },
-        { coordinates: [-72.6378679,  42.319534], content: '<h3>JMG Station</h3><p>Some information for Marker 2.</p>' },
-        { coordinates: [-72.635669,  42.3167667], content: '<h3>Forbes Station</h3><p>Some information for Marker 2.</p>' },
-        // Add more markers as needed
-    ];
+            const markers = <%= @stations.to_json(only: [:latitude, :longitude]) %>;
 
-    // Loop through the markers array and add each marker to the map
-        markers.forEach(markerInfo => {
-            const popup = new mapboxgl.Popup({ offset: 35 }).setHTML(markerInfo.content);
-
-            new mapboxgl.Marker()
-                .setLngLat(markerInfo.coordinates)
+            markers.forEach(station => {
+              const popupContent = `<h3>Station</h3><p>Latitude: ${station.latitude}</p><p>Longitude: ${station.longitude}</p>`;
+              
+              const popup = new mapboxgl.Popup({ offset: 35 }).setHTML(popupContent);
+      
+              new mapboxgl.Marker()
+                .setLngLat([station.longitude, station.latitude])
                 .setPopup(popup)
                 .addTo(map);
-        
-            });   
-        }); 
+            }); 
+        });
+            
             
        
     </script>
@@ -55,7 +50,7 @@
             background-size: cover;
             /* box-sizing: border-box; */
         }
-        #map {
+        map {
             width: 100%; /* Adjust to your preferred width */
             height: calc(100vh - 40px); /* Adjust to your preferred height */
             margin-top: 70px ; /* Center the map horizontally */
