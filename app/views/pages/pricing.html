@@ -7,18 +7,18 @@
       <a href="#help">Help</a>
     </nav>
 </header>
-<p>We haven't really decided on pricing yet lmao. </p>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="https://js.stripe.com/v3/"></script>
-  <script>
-    var stripe = Stripe(pk_test_51OHeAKJg0jV0uG9HFob6ddEw6UmDY1dEM80lWeO93jIx5GKD5XnKFWPQlVkCp3Xno7nq8FFSAq0ftN7p8x3fLBc100gLoVMuXR);
-  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>App Pricing</title>
+  <script src="https://rails-assets.org/assets/turbolinks.js"></script>
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>
+    var stripe = Stripe('pk_test_51OHeAKJg0jV0uG9HFob6ddEw6UmDY1dEM80lWeO93jIx5GKD5XnKFWPQlVkCp3Xno7nq8FFSAq0ftN7p8x3fLBc100gLoVMuXR');
+  </script>
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -81,6 +81,24 @@
     .pricing-card.expanded .pricing-details {
       display: block;
     }
+
+    .join-button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .join-button:hover {
+    background-color: #45a049;
+  }
   </style>
 </head>
 <body>
@@ -90,7 +108,7 @@
       <div class="pricing-card-content">
         <h2>Student/Senior Plan</h2>
         <p>$10/month</p>
-        <button onclick="redirectToCheckout('Student/Senior Plan')">Join</button>
+        <button class="join-button" onclick="redirectToCheckout('price_1OMFTOJg0jV0uG9HzvRLtahp')">Join</button>
       </div>
       <div class="pricing-details">
         <p>Features of the Student and Senior Plan:</p>
@@ -114,7 +132,7 @@
       <div class="pricing-card-content">
         <h2>Busy-Persons Plan</h2>
         <p>$30/month</p>
-        <button onclick="redirectToCheckout('Busy-Persons Plan')">Join</button>
+        <button class="join-button" onclick="redirectToCheckout('price_1OMFTOJg0jV0uG9HzvRLtahp')">Join</button>
       </div>
       <div class="pricing-details">
         <p>Features of the Busy-Persons Plan:</p>
@@ -128,10 +146,8 @@
   </div>
 
   <script>
-    function toggleDetails(card) {
-      card.classList.toggle('expanded');
-    }
     function redirectToCheckout(planId) {
+      console.log('Join button clicked for plan:', planId);
     fetch('/create-checkout-session', {
       method: 'POST',
       headers: {
@@ -154,6 +170,9 @@
       console.error('Error:', error);
     });
   }
+    function toggleDetails(card) {
+      card.classList.toggle('expanded');
+    }
   </script>
 
 </body>

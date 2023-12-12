@@ -7,10 +7,6 @@ module SessionsHelper
       @current_member ||= Member.find_by(id: session[:member_id])
     end
 
-    # def require_user
-    #   redirect_to '/login' unless current_user
-    # end
-
     def logged_in?
       !current_member.nil?
     end

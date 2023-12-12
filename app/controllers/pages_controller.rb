@@ -3,12 +3,14 @@ class PagesController < ApplicationController
         render template: "pages/#{params[:page]}"
     end
 
+    skip_before_action :verify_authenticity_token, only: [:create_checkout_session]
+
     def create_checkout_session
         session = Stripe::Checkout::Session.create(
           payment_method_types: ['card'],
           line_items: [
             {
-              price: 'price_123',
+              price: 'price_1OMFTOJg0jV0uG9HzvRLtahp',
               quantity: 1,
             },
           ],

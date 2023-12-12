@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   resources :reports, except: [:create, :update, :delete, :destroy]
   resources :members, except: [:create, :update, :delete, :destroy]
   resources :bikes, except: [:create, :update, :delete, :destroy]
+  root to: "stations#index"
   resources :stations
   get "/pages/:page" => "pages#show"
   post '/create-checkout-session', to: 'pages#create_checkout_session'
-  root to: "stations#index"
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy', as: 'logout'
