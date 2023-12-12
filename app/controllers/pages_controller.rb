@@ -4,9 +4,9 @@ class PagesController < ApplicationController
     end
 
     def map
-    
+       # Your 'map' action code goes here
     end
-
+  
     skip_before_action :verify_authenticity_token, only: [:create_checkout_session]
 
     def create_checkout_session
@@ -25,4 +25,5 @@ class PagesController < ApplicationController
     
         render json: { id: session.id }
     end
-end 
+    
+  end 
