@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :reports
   resources :members
   resources :bikes
+  resources :categories
   root to: "stations#index"
   resources :stations
   get '/index.html', to: 'stations#index'

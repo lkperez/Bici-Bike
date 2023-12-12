@@ -17,25 +17,8 @@
                 center: [-72.6403, 42.3163], // Northampton coordinates
                 zoom: 15
             });
-
-
-
-            const markers = <%= @stations.to_json(only: [:latitude, :longitude]) %>;
-
-            markers.forEach(station => {
-              const popupContent = `<h3>Station</h3><p>Latitude: ${station.latitude}</p><p>Longitude: ${station.longitude}</p>`;
-              
-              const popup = new mapboxgl.Popup({ offset: 35 }).setHTML(popupContent);
-      
-              new mapboxgl.Marker()
-                .setLngLat([station.longitude, station.latitude])
-                .setPopup(popup)
-                .addTo(map);
-            }); 
+            
         });
-            
-            
-       
     </script>
     <!-- # Include Leaflet library
     # <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
@@ -58,7 +41,7 @@
             z-index: 1; 
         }
 
-      
+        
         .topnav {
             overflow: hidden;
             background-color: #333;

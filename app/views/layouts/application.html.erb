@@ -14,10 +14,13 @@
     <title>ValetBike</title>
   </head>
   <body>
-  <%= render 'layouts/messages' %>
     <div id="site-container" class="flexbox vertical stretch flex-1">
       <div class="flexbox vertical center">
-        <%= yield %>
+        <%= yield %> <br>
+        <%= render 'layouts/messages' %>
+      </div>
+      <div class="footer">
+        <p>Made by Jillian, Laisha, Kika, and Rachel for CSC 223 Fall 2023.</p>
       </div>
     </div>
   </body>
