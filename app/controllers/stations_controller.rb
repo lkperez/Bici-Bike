@@ -1,11 +1,9 @@
 class StationsController < ApplicationController
 
   def index
+    @stations = Station.all.order(identifier: :asc)
     if logged_in?
       @member = current_member
-      @stations = Station.all.order(identifier: :asc)
-    else
-      redirect_to login_path, alert: 'Please log in!'
     end
   end
 
