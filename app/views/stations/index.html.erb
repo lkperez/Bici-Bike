@@ -22,7 +22,7 @@
           <a href="pages/pricing.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Pricing</a>
         </li>
         <li>
-          <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Map</a>
+          <a href="pages/map.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Map</a>
         </li>
         <li>
           <a href="/members/<%=current_member.id%>" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 hover:text-white md:hover:bg-transparent"> My Account </a>
@@ -31,19 +31,22 @@
     </div>
   </div>
 </nav>
-<div class="page-section flexbox vertical stretch" style="z-index: 0;">
-  <div class="section-inner flexbox vertical stretch">
-    <div class="section-title" style="margin-top: 50px;">
-      Welcome to BiciBike!
+<div style="z-index: 0; width:100%; margin-top:84px;">
+    <div style="width:100%; display:flex; justify-content:space-around; background-color:#FAFAFA;">
+      <div style="width:40%;">
+        <h1 style="margin-top:25%; margin-left:20%; font-size:50px;">BiciBike</h1>
+        <p style="font-size:25px; margin-left:20%;">Use Bici because you're busy</p> <br>
+        <a class="button-style" style="margin-left:20%; border:2px solid #05014a;" href="<%=signup_path %>">Register</a>
+        <a class="button-style" style="border:2px solid #05014a; background-color:white; color:#05014a;" href="<%=login_path %>">Log in</a>
+      </div>
+      <div style="width:60%;">
+        <img src="https://i0.wp.com/trainsinthevalley.org/wp-content/uploads/2018/09/nht-20180901_124759.jpg?ssl=1"/>
+      </div>
     </div>
 
-    <link rel="stylesheet" href="bikemap.css">
-    <div class="google-map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47193.7043966162!2d-72.66339995!3d42.329590499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e6d73e7c8e2a05%3A0xc316750b13d8db0b!2sNorthampton%2C%20MA!5e0!3m2!1sen!2sus!4v1699940041010!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-    <div class="flexbox vertical stretch">
+    <div class="flexbox vertical stretch" style="margin-left:8%; margin-right:8%; margin-bottom: 100px;">
       <br>
-      <h1> Stations </h1>
+      <h1> Our Stations </h1> <br>
       <% if @stations.present? %>
         <%= render(partial: "stations/row", collection: @stations, as: :station) %>
       <% else %>
@@ -51,8 +54,9 @@
         No stations found.
       </div>
       <% end %>
-    </div>
-	</div>
+      <br><br>
+      <h1> Pricing </h1>
+  </div>
 </div>
 
 <% if logged_in? %>

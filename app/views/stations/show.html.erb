@@ -38,7 +38,7 @@
       <%= @station.name %> Station
     </div>
     <p><b>Address:</b> <%= @station.address %></p>
-    <p><%=@station.total_docks%> total docks, <%=@station.docked_bikes.count%> bikes currently available.</p> <br>
+    <p><%=@station.total_docks%> total docks, <%=@station.docked_bikes.count%> bike(s) currently available.</p> <br>
     <h1>Available Bikes</h1>
     <div class="flexbox vertical stretch">
       <% if @station.docked_bikes.length != 0 %>
