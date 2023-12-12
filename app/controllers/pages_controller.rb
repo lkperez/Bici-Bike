@@ -3,6 +3,10 @@ class PagesController < ApplicationController
         render template: "pages/#{params[:page]}"
     end
 
+    def map
+    
+    end
+
     skip_before_action :verify_authenticity_token, only: [:create_checkout_session]
 
     def create_checkout_session
