@@ -27,3 +27,4 @@ Route.create!([{id:1, name:"Forest Bike Trail", startLocation:"123 Main Street",
 p "Created #{Route.count} routes"
 
 Category.find(1).routes << Route.find(1)
+
